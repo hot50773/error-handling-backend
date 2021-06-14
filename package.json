@@ -1,6 +1,6 @@
 {
-  "name": "auth",
-  "version": "0.0.2",
+  "name": "error-handling",
+  "version": "0.0.1",
   "main": "index.js",
   "license": "MIT",
   "private": true,
