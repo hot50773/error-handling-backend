@@ -1,8 +1,15 @@
 # ChangeLog
+#### 0.0.2
+更新錯誤格式（404, 500）
 
-## Reference:
-其他作法
-- [REST API 錯誤處理 | 讓錯誤代碼、錯誤名稱和錯誤信息更友好、更簡潔、更規範](https://www.youtube.com/watch?v=u3-WAGEn0W8&list=LL&index=4&t=484s)
+#### 0.0.1
+專案初版
+
+---
+
+## Guide
+
+- 其他作法: [REST API 錯誤處理 | 讓錯誤代碼、錯誤名稱和錯誤信息更友好、更簡潔、更規範](https://www.youtube.com/watch?v=u3-WAGEn0W8&list=LL&index=4&t=484s)
 
 ---
 
