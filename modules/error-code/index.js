@@ -22,5 +22,14 @@ ErrorAccount.ParamExistEmail        = new BaseError(10005, '參數:email，此�
 ErrorAccount.InvalidEmailOrPassword = new BaseError(10006, '參數:email, password，帳號或密碼錯誤')
 ErrorAccount.UnknownError           = new BaseError(10999, '未知錯誤')
 
-module.exports.ErrorAccount = ErrorAccount
+const ErrorSystem = {}
+
+ErrorSystem.InternalError = new BaseError(90001, '系統錯誤')
+ErrorSystem.URLNotFound = new BaseError(90002, 'URL 錯誤')
+
+module.exports = {
+  ErrorAccount,
+  ErrorSystem
+}
+
 // module.exports.HTTP400Error = HTTP400Error

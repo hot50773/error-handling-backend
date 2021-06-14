@@ -44,9 +44,12 @@
 #### 404 Not Found
 ```json
 {
-    "status": "URL Note Found",
+    "status": "error",
     "errors": [
-        "Invalid URL"
+        {
+            "code": 90002,
+            "message": "URL 錯誤"
+        }
     ]
 }
 ```
@@ -54,9 +57,12 @@
 #### 500
 ```json
 {
-    "status": "Server Error",
+    "status": "error",
     "errors": [
-        "SyntaxError: Unexpected token in JSON at position 23......."
+        {
+            "code": 90001,
+            "message": "系統錯誤"
+        }
     ]
 }
 ```
@@ -77,8 +83,6 @@ const HttpStatusCode = {
 const ResponseStatusCode = {
   Success: 'success',
   Warning: 'warning',
-  Error: 'error',
-  NotFound: 'Note Found',
-  InternalError: 'Server Error'
+  Error: 'error'
 }
 ```

@@ -1,9 +1,7 @@
 const ResponseStatusCode = {
   Success: 'success',
   Warning: 'warning',
-  Error: 'error',
-  NotFound: 'Note Found',
-  InternalError: 'Server Error'
+  Error: 'error'
 }
 
 module.exports = ResponseStatusCode

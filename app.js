@@ -3,6 +3,7 @@ const app = express()
 
 const port = process.env.port || 3000
 
+const ErrorSystem = require('my-error-code').ErrorSystem
 const HttpStatusCode = require('my-status-code').HttpStatusCode
 const ResponseStatusCode = require('my-status-code').ResponseStatusCode
 
@@ -17,12 +18,12 @@ app.use('/api/user', authRoute)
 app.all('*', (req, res, next) => {
   try {
     res.status(HttpStatusCode.NotFound).json({
-      status: ResponseStatusCode.NotFound,
-      errors: ['Invalid URL']
+      status: ResponseStatusCode.Error,
+      errors: [
+        ErrorSystem.URLNotFound
+      ]
     })
-  }
-
-  catch (err) {
+  } catch (err) {
     next(err)
   }
 })
@@ -30,13 +31,11 @@ app.all('*', (req, res, next) => {
 app.use(function (err, req, res, next) {
   console.error(err.stack)
 
-  console.log({
-    status: ResponseStatusCode.InternalError,
-    errors: [err.stack]
-  })
   res.status(HttpStatusCode.InternalError).json({
-    status: ResponseStatusCode.InternalError,
-    errors: [err.stack] // 正式環境需隱藏
+    status: ResponseStatusCode.Error,
+    errors: [
+      ErrorSystem.InternalError
+    ]
   })
 })
 
