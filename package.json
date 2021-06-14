@@ -1,0 +1,18 @@
+{
+  "name": "auth",
+  "version": "0.0.2",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "restart": "pm2 restart app.js --time --update-env --watch",
+    "start": "pm2 start app.js --time --watch",
+    "kill": "pm2 kill",
+    "logs": "pm2 logs"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "my-error-code": "file:modules/error-code",
+    "my-status-code": "file:modules/status-code"
+  }
+}
